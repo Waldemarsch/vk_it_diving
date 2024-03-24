@@ -25,7 +25,7 @@ func main() {
 
 	srvr := new(gateway.Server)
 	go func() {
-		if err := srvr.Run(viper.GetString("port"), hdlr.InitRoutes()); err != nil {
+		if err := srvr.Run(viper.GetString("server.port"), hdlr.InitRoutes()); err != nil {
 			log.Fatalf("error occured while running http server: %s", err.Error())
 		}
 	}()
